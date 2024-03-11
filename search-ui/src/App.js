@@ -9,18 +9,16 @@ import {
     PagingInfo,
     ResultsPerPage,
     Paging,
-    Sorting,
     WithSearch
 } from "@elastic/react-search-ui";
 import {
-    BooleanFacet, Layout, SingleLinksFacet, SingleSelectFacet
+Layout
 } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
-import {SearchDriverOptions} from "@elastic/search-ui";
 import ElasticsearchAPIConnector from "@elastic/search-ui-elasticsearch-connector";
 
 const connector = new ElasticsearchAPIConnector({
-    host: "http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:9200",
+    host: `http://${process.env.REACT_APP_DATABASE_API}:9200`,
     index: "generated_text",
     // apiKey:""
 });
@@ -101,7 +99,7 @@ export default function App() {
                                             //     ageField: "age",
                                             //     durationField: "duration",
                                             //     accentField: "accent",
-                                            // }}
+                                            //  enable it infuture for search suggestion}}
                                             autocompleteSuggestions={false}
                                             debounceLength={0}
                                         />
@@ -110,7 +108,8 @@ export default function App() {
                                         <div>
                                             {/*{wasSearched && (*/}
                                             {/*    <Sorting label={"Sort by"} sortOptions={[]} />*/}
-                                            {/*)}*/}
+                                            {/*)}*/} 
+                                            {/* in future we can enable it for sorting purpose */}
                                             <Facet
                                                 key={"1"}
                                                 field="age.keyword"
