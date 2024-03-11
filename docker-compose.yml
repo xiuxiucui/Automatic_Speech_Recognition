@@ -17,7 +17,7 @@ services:
       - http.cors.allow-origin=*
       - http.cors.allow-methods=OPTIONS, HEAD, GET, POST, PUT, DELETE
       - http.cors.allow-headers=X-Requested-With, X-Auth-Token, Content-Type, Content-Length, Authorization, Access-Control-Allow-Headers, Accept, x-elastic-client-meta
-       - http.cors.allow-credentials=true
+      - http.cors.allow-credentials=true
     mem_limit: 1g
     memswap_limit: 2g
 
