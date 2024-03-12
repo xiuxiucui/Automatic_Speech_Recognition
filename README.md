@@ -60,7 +60,7 @@ Prior to running this project on your local machine, please ensure that the foll
    ```shell
    docker stop asr-api
    ```
-## Part 2 and Part 3(Local)
+## Part 2 and Part 3(Local deployment)
 ### Part 2 local deployment of services
 1. Navigate to **Root**:\search-ui open Dockerfile and change line 9 to
  ```shell
@@ -90,7 +90,7 @@ completed
 ```
 9. Now you may go to http://localhost:3000/ in a browser and the application will start up normally
 
-## Part 2 and Part 3(Amazon EC2)
+## Part 2 and Part 3(Amazon EC2 Deployment)
 ### Part 2 Deployment of services on Amazon EC2
 #### Deployment plan
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b22e5234-4c04-4fd0-9501-7bf40ba5538f)
