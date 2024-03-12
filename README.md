@@ -20,7 +20,7 @@ Prior to running this project on your local machine, please ensure that the foll
 ### Prerequisites
 1. Internet connection
 2. Docker Desktop
-3. Python 
+3. Python 3.10
 4. Running Amazon EC2 Instance (Only for cloud deployment, not required for local deployment)
 5. Donloaded dataset from [Kaggle](https://www.kaggle.com/datasets/mozillaorg/common-voice), only need the cv-valid-dev directory which contains 4076 mp3 file and  cv-valid-dev.csv
 * You may skip the last prerequisites if you do not wish to generate your own dataset. A generated dataset is provided in the repo
