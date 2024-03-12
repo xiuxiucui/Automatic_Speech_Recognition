@@ -9,7 +9,7 @@ host="http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:9200"
 
 es = Elasticsearch(host)
 
-df=pd.read_csv(r'../asr/cs-valid-dev.csv')
+df=pd.read_csv(r'../asr/final.csv')
 df.fillna('N/A', inplace=True)
 df_data=df.values.tolist()
 def gendata(df_data):
