@@ -49,7 +49,7 @@ async def process_files():
         results = await asyncio.gather(*tasks)
         df2 = pd.DataFrame(results, columns=['filename', 'duration', 'generated_text'])
         df3=pd.merge(df,df2, on='filename', how='left')
-        df3.to_csv('output.csv', index=False)
+        df3.to_csv('cv-valid-dev.csv', index=False)
 
 
 # Run the asynchronous function
@@ -58,7 +58,6 @@ asyncio.run(process_files())
 
 try:
     rmdir(Path("./cv-valid-dev"))
-    os.remove("./cv-valid-dev.csv")
 except:
     pass
 print("completed")
