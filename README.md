@@ -19,7 +19,7 @@ Prior to running this project on your local machine, please ensure that the foll
 5. Donloaded dataset from [Kaggle](https://www.kaggle.com/datasets/mozillaorg/common-voice), only need the cv-valid-dev directory which contains 4076 mp3 file and  cv-valid-dev.csv
 * You may skip the last prerequisites if you do not wish to generate your own dataset. A generated dataset is provided in the repo
 
-### Starting up (Local)
+### Starting up (Only required in Local)
 1. Start Docker desktop
 2. Clone the repository.
 3. Using your Terminal, navigate into **Automatic_Speech_Recognition** directory, where docker-compose.yaml file is located. This will be the the **Root** directory for this project
@@ -29,7 +29,7 @@ Prior to running this project on your local machine, please ensure that the foll
     pip install -r requirements.txt
     ```
 
-## Part 1 (Local)
+## Part 1 (Only required in Local)
 * Skip this step if you only want the **output.csv** file mentioned in step 6, which is available as **final.csv** in the **Root**:\asr directory
 1. Navigate to **Root**:\asr
 2. Run the following command in the Terminal 
