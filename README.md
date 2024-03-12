@@ -5,7 +5,7 @@
 # About The Project
 This repository containes the source code for Automatic Speech Recognition, Elasticsearch Backend deployment and an UI which interacts with the Elasticsearch backend
  You may visit the link to access the demonstration service deployed in Amazon EC2 t2.micro
- * http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:3000/
+ * http://ec2-13-212-254-81.ap-southeast-1.compute.amazonaws.com:3000/
 
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/7b0977eb-ef08-444a-9a77-d3633f8ad20f)
 
