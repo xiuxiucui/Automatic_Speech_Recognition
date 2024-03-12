@@ -81,7 +81,7 @@ python cv-index.py
 ____________
 completed
 ```
-9. Now you may go to http://localhost:3000/ in a browser and the application will be working fine.
+9. Now you may go to http://localhost:3000/ in a browser and the application will be looking like the picture below
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/7b0977eb-ef08-444a-9a77-d3633f8ad20f)
 
 
