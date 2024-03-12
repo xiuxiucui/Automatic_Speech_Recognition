@@ -54,6 +54,7 @@ Prior to running this project on your local machine, please ensure that the foll
    docker stop asr-service
    ```
 ## Part 2 and Part 3(Local)
+### Part 2 local deployment of services
 1. Navigate to **Root**:\search-ui and change line 9 to
  ```shell
 ENV REACT_APP_DATABASE_API=localhost
@@ -64,9 +65,10 @@ ENV REACT_APP_DATABASE_API=localhost
 docker-compose up
 ```
 5. If go to http://localhost:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet
+   
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
-
-7. asd
+### Part 3 Loading data to local Elasticsearch node
+7. 
 
 8. 
 
