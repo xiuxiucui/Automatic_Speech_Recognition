@@ -4,6 +4,14 @@ import asyncio
 import time
 import os
 
+def rmdir(directory):
+    directory=Path(directory)
+    for item in directory.iterdir():
+        if item.is_dir():
+            rmdir(item)
+        else:
+            item.unlink()
+    directory.rmdir()
 # Assuming the Flask API is running locally on port 5000
 ASR_API_URL = 'http://localhost:8001/asr'
 
@@ -40,13 +48,16 @@ async def process_files():
         results = await asyncio.gather(*tasks)
         df2 = pd.DataFrame(results, columns=['filename', 'duration', 'generated_text'])
         df3=pd.merge(df,df2, on='filename', how='left')
-        df3.to_csv('final.csv', index=False)
+        df3.to_csv('output.csv', index=False)
 
 
 # Run the asynchronous function
 
 asyncio.run(process_files())
 
-
-# # Save the updated DataFrame to a new CSV file
-# df.to_csv('cv-valid-dev_new.csv', index=False)
+try:
+    rmdir(Path("./cv-valid-dev"))
+    os.remove("./cv-valid-dev.csv")
+except:
+    pass
+print("completed")
