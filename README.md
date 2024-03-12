@@ -3,7 +3,7 @@
 </div>
 
 # About The Project
-This repository containes the source code for Automatic Speech Recognition, Elasticsearch Backend deployment and an UI that interacts with the Elasticbackend
+This repository containes the source code for Automatic Speech Recognition, Elasticsearch Backend deployment and an UI which interacts with the Elasticsearch backend
  You may visit the link to access the demonstration service deployed in Amazon EC2 t2.micro
  * http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:3000/
 
