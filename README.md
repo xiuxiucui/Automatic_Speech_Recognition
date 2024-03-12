@@ -115,7 +115,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo yum install git -y
 
 # Install Amazon efs utilities
-sudo yum -y install amazon-efs-utils
+sudo yum install amazon-efs-utils
 
 ```
 3. Disconnect the SSH session and reconnect it back again, This step allow us to run docker command without sudo
