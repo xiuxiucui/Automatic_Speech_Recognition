@@ -38,6 +38,7 @@ async def get_transcription_and_duration(session, audio_file_path):
             return None, None
 
 # Asynchronous function to process all files
+# out put a cv-valid-dev.csv containing the additiona duration and generated_text column
 async def process_files():
     async with aiohttp.ClientSession() as session:
         tasks = []
@@ -56,6 +57,7 @@ async def process_files():
 
 asyncio.run(process_files())
 
+#Remove the mp3 files
 try:
     rmdir(Path("./cv-valid-dev"))
 except:
