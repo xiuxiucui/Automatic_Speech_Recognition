@@ -180,5 +180,8 @@ completed
 4. At present, ElasticSearch Backend data can only be accessed within Docker, posing significant data security risks. An improved strategy involves mapping data stored in Docker to a directory on the EC2 instance. This approach could be further refined by linking the EC2 directory to an external storage solution, such as Amazon Elastic File System (EFS), as shown in the proposed schematic below. Although efforts to implement this configuration were made, they led to Docker container crashes with exit code 1. I plan to persist in seeking a viable solution.
 ![current drawio (2)](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/3b0b0493-beec-4ae0-a869-60bfa6d04cc4)
 
+## Appendix
+[YouTube Video on how to configure EC2 outbound and inbound network traffic](https://www.youtube.com/watch?v=kxuUMZE9dxU)
+
 
 
