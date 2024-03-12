@@ -94,7 +94,8 @@ completed
 ## Part 2 and Part 3(Amazon EC2 Deployment)
 ### Part 2 Deployment of services on Amazon EC2
 #### Deployment plan
-![Uploading flow_chart.drawio (2).png…]()
+![flow_chart drawio (2)](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/15e14726-a37c-4b1e-97cc-6b1a7a8640a8)
+
 
 
 
