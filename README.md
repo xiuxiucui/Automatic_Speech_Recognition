@@ -62,7 +62,7 @@ Prior to running this project on your local machine, please ensure that the foll
    ```
 ## Part 2 and Part 3(Local)
 ### Part 2 local deployment of services
-1. Navigate to **Root**:\search-ui open docker file and change line 9 to
+1. Navigate to **Root**:\search-ui open Dockerfile and change line 9 to
  ```shell
 ENV REACT_APP_DATABASE_API=localhost
 ```
@@ -75,9 +75,9 @@ docker-compose up
    
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
 ### Part 3 Loading data to local Elasticsearch node
-6.  Navigate to **Root**:\elastic-backend and ensure the host is set to http://localhost:9200 on line 9
+6.  Navigate to **Root**:\elastic-backend open cv-index.py and ensure the host is set to http://localhost:9200 on line 8
 ```shell
-Line 9 host="http://localhost:9200"
+Line 8 host="http://localhost:9200"
 ```
 7. Run the following command in the Terminal
 ```shell
