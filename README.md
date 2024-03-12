@@ -40,8 +40,8 @@ Prior to running this project on your local machine, please ensure that the foll
 1. Navigate to **Root**:\asr
 2. Run the following command in the Terminal 
    ```shell
-    docker build -t asr . # build a docker image and tag it as asr
-    docker run --name asr-service --rm -p 8001:8001 asr # start a docker container with the name asr-service using the asr image built earlier, expose port 8001, and auto clean the container once it has stopped
+   docker build -t asr . # build a docker image and tag it as asr
+   docker run --name asr-service --rm -p 8001:8001 asr # start a docker container with the name asr-service using the asr image built earlier, expose port 8001, and auto clean the container once it has stopped
     ```
 3. Go to browser and open http://localhost:8001/ping, it should responde you with _"response": "pong"_ once the server is up and running
 4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle into **Root**:\asr (step 5 of Prerequisites). _**The original cv-valid-dev directory and the cv-valid-dev.csv file will be automatically deleted after program execution**_
