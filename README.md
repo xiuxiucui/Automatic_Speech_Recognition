@@ -137,10 +137,9 @@ free -m                             # verify space allocated
 The terminal should look like this 
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/871dd3a3-ec69-4fec-b355-5c35c5bc56a4)
 
-5. Run the following command to set vm.max_map_count to at least262144 according to [elasticsearch official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
+5. Run the following command to set vm.max_map_count to at least 262144 according to [elasticsearch official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 ```shell
 sudo sysctl -w vm.max_map_count=262144
-cd application
 ```
   
 5. Create a folder called **application** to store our project using the following code 
@@ -182,7 +181,8 @@ python cv-index.py
 ____________
 completed
 ```
-15. Now you may go to http://\<your_instance_address>:3000/ in a browser and the application will start up normally
+15. If you encounter error in step 14 such as connection timeout error, just re-run step 13 again. It could be due to slow connection.
+16. Now you may go to http://\<your_instance_address>:3000/ in a browser and the application will start up normally
 ## Furture improvement
 1. Currently, this document details the use of the HTTP protocol for requests, which lacks robust security. Given that this project is in its prototype phase, this approach remains acceptable. However, transitioning to a production environment necessitates the adoption of the HTTPS protocol, endorsed by Elasticsearch Backend. Attempts to establish an HTTPS connection, involving the integration of a self-signed CA certificate from Elasticsearch, were made but did not succeed.
 2. The choice to deploy Elasticsearch on an Amazon EC2 Free Tier t2.micro instance falls short of ideal. The official documentation from Elasticsearch recommends a minimum of 2GB of RAM per node, with swapping disabled to ensure optimal performance. The t2.micro's limited resources compel us to enable swapping, both in the EC2 instance and within the docker-compose.yml, inevitably compromising node performance. For optimal deployment using docker-compose please refer to the [official Docker repo](https://github.com/elastic/elasticsearch/blob/8.12/docs/reference/setup/install/docker/docker-compose.yml), which implements both HTTPS for security and disabled swapping for performance.
