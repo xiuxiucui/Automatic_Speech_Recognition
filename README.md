@@ -62,7 +62,7 @@ Prior to running this project on your local machine, please ensure that the foll
    ```
 ## Part 2 and Part 3(Local)
 ### Part 2 local deployment of services
-1. Navigate to **Root**:\search-ui and change line 9 to
+1. Navigate to **Root**:\search-ui open docker file and change line 9 to
  ```shell
 ENV REACT_APP_DATABASE_API=localhost
 ```
