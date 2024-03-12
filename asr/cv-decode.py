@@ -3,6 +3,7 @@ import aiohttp
 import asyncio
 import time
 import os
+from pathlib import Path
 
 def rmdir(directory):
     directory=Path(directory)
