@@ -71,7 +71,7 @@ ENV REACT_APP_DATABASE_API=localhost
 ```shell
 docker-compose up
 ```
-5. If go to http://localhost:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet
+5. Go to http://localhost:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet
    
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
 ### Part 3 Loading data to local Elasticsearch node
