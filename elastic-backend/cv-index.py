@@ -15,7 +15,7 @@ df_data=df.values.tolist()
 def gendata(df_data):
     for data in df_data:
         yield {
-            "_index": "generated_text",
+            "_index": "cv-transcriptions",
             "filename": data[0],
             "_id": data[0],
             "text":data[1],
