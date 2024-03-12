@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Automatic Speech Recognition and Elasticsearch Amazon EC2 deployment</h1>
+<h1>Automatic Speech Recognition and Elasticsearch deployment with Search UI</h1>
 </div>
 
 # About The Project
