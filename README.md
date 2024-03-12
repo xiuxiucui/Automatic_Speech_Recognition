@@ -3,6 +3,11 @@
 </div>
 
 # About The Project
+This repository containes the source code for Automatic_Speech_Recognition, Elasticsearch Backend deployment and an UI that Interact with the Elasticbackend
+ You may visit the link to access the demonstration service deployed in Amazon EC2 t2.micro
+ * http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:3000/?size=n_20_n 
+
+![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/7b0977eb-ef08-444a-9a77-d3633f8ad20f)
 This project consist of 3 parts
 1. Local generation of text from audio file using hugging face facebook/wav2vec2-large-960h model
 2. Deployment of Elasticsearch and Frontend UI Locallly or on  Amazon EC2 Instance 
@@ -82,7 +87,7 @@ ____________
 completed
 ```
 9. Now you may go to http://localhost:3000/ in a browser and the application will be looking like the picture below
-![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/7b0977eb-ef08-444a-9a77-d3633f8ad20f)
+
 
 
 
