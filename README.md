@@ -134,6 +134,12 @@ free -m                             # verify space allocated
 The terminal should look like this 
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/871dd3a3-ec69-4fec-b355-5c35c5bc56a4)
 
+5. Run the following command to set vm.max_map_count to at least262144 according to [elasticsearch official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
+```shell
+sudo sysctl -w vm.max_map_count=262144
+cd application
+```
+  
 5. Create a folder called **application** to store our project using the following code 
 ```shell
 mkdir application
