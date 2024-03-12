@@ -1,5 +1,5 @@
 <div align="center">
-<h2>Automatic_Speech_Recognition and Elasticsearch Amazon EC2 deployment</h2>
+<h1>Automatic_Speech_Recognition and Elasticsearch Amazon EC2 deployment</h1>
 </div>
 
 # About The Project
@@ -88,10 +88,98 @@ python cv-index.py
 ____________
 completed
 ```
-9. Now you may go to http://localhost:3000/ in a browser and the application will be looking like the picture below
+9. Now you may go to http://localhost:3000/ in a browser and the application will start up normally
+
+## Part 2 and Part 3(Amazon EC2)
+### Part 2 Deployment of services on Amazon EC2
+#### Deployment plan
+![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b22e5234-4c04-4fd0-9501-7bf40ba5538f)
+
+The following deployment plan works on Amazon Linux 2 Kernel 5.10 t2.micro as of 03/Dec/2024, you may need to change some of the configuration in future
 
 
+1. Connect to your EC2 instance using SSH
+2. Install Docker, Docker Compose, git and Amazon efs utilities tools using the following command
+```shell
+# install Docker
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
 
+# install Docker Compose
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# install git
+sudo yum install git -y
+
+# Install Amazon efs utilities
+sudo yum -y install amazon-efs-utils
+
+```
+3. Disconnect the SSH session and reconnect it back again, This step allow us to run docker command without sudo
+4. Run following command to set up swap file
+   **This step is critical, as the t2.micro instance only provides 1GB of RAM and each Elastic search node require around 2GB of RAM**
+The following code gives to creadit to [Ahmad Bilesanmi](https://medium.com/bilesanmiahmad/how-to-install-elasticsearch-on-aws-9d1bb1045daf)
+   
+```shell
+sudo fallocate -l 1500M /swapfile   # allocate extra 1500MB for memory swap
+ls -lh /swapfile                    # verify the allocation is indeed 1500MB
+sudo chmod 600 /swapfile            # change the permissions for the file
+ls -lh /swapfile                    # verify  the permissions change
+sudo mkswap /swapfile               # set up swap space
+sudo swapon /swapfile               # enable swap space
+free -m                             # verify space allocated 
+```
+
+The terminal should look like this 
+![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/871dd3a3-ec69-4fec-b355-5c35c5bc56a4)
+
+5. Create a folder called **application** to store our project using the following code 
+```shell
+mkdir application
+cd application
+```
+6. Create a folder called **esdata** and map it to Amazon elastic filesystem efs using the following code, the name **esdata** is important, It is defined as a volumne mount in the docker-compose file. Please refer to Appendix for creation of efs volume
+```shell
+mkdir esdata
+sudo mount -t efs -o tls <your file system id> esdata
+```
+7. Finally we can git clone the repo into our EC2 instance and start the service.
+8. Prior clone to the EC2 instance there is 1 changes you need to make
+   1. Go to **Root**\search-ui\Dockerfile change the following line
+ ```shell
+ENV REACT_APP_DATABASE_API=<your own EC2 instance address>  such as ec2-1-11-11-11.ap-southeast-2.compute.amazonaws.com
+```
+9. Ensure that you are in the **application** folder we have created in step 5, and within the **application** folder there is another folder called **esdata**.
+10. git clone the repository and navigate inside using the following command(i am using my own repo as an example)
+```shell
+git clone git@github.com:xiuxiucui/Automatic_Speech_Recognition.git
+cd  Automatic_Speech_Recognition
+```
+11. Run the following command in the Terminal and wait for the 3 containers to start up
+```shell
+docker-compose up
+```
+12. If go to http://<your instance address>:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet. Or your EC2 security rule is not set up properly, refer to Appendix for EC2 security rule set up
+    ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
+
+### Part 3 Loading data to local Elasticsearch node (you should  execute this step locally)
+13.  Navigate to **Root**:\elastic-backend open cv-index.py and ensure the host is set to http://\<your_instance_address>:9200 on line 8
+```shell
+Line 8 host="<your_instance_address>:9200"
+```
+14. Run the following command in the Terminal
+```shell
+python cv-index.py
+```
+15. You will see the following lines once it is completed
+```shell
+____________
+completed
+```
+16. Now you may go to http://localhost:3000/ in a browser and the application will start up normally
 
 
 
