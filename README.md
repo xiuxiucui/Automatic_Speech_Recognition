@@ -184,5 +184,8 @@ completed
 ## Appendix
 [YouTube Video on how to configure EC2 outbound and inbound network traffic](https://www.youtube.com/watch?v=kxuUMZE9dxU)
 
+## Contact
+If you have any inquires or issue with this submission , feel free to approach me using any of the channel below
 
+Cui Xiuqun - [LinkedIn](https://www.linkedin.com/in/xiuqun-cui/) - xiuqun@u.nus.edu
 
