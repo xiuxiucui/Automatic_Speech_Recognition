@@ -22,7 +22,7 @@ AUDIO_FILES_DIRECTORY = ''
 df = pd.read_csv('cv-valid-dev.csv')
 
 # Semaphore to limit the number of concurrent connections
-CONNECTION_SEMAPHORE = asyncio.Semaphore(15)
+CONNECTION_SEMAPHORE = asyncio.Semaphore(15) # currently set at 15 concurrent jobs
 
 # Asynchronous function to get transcription and duration
 async def get_transcription_and_duration(session, audio_file_path):
