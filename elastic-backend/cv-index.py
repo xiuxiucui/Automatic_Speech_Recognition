@@ -5,7 +5,7 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 import pandas as pd
 
-host="http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:9200"
+host="http://ec2-13-212-254-81.ap-southeast-1.compute.amazonaws.com:9200"
 
 es = Elasticsearch(host)
 
