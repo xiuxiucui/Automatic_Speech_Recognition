@@ -19,7 +19,7 @@ import ElasticsearchAPIConnector from "@elastic/search-ui-elasticsearch-connecto
 
 const connector = new ElasticsearchAPIConnector({
     host: `http://${process.env.REACT_APP_DATABASE_API}:9200`,
-    index: "generated_text",
+    index: "cv-transcriptions",
     // apiKey:""
 });
 
