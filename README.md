@@ -31,6 +31,7 @@ Prior to running this project on your local machine, please ensure that the foll
     ```
 
 ## Part 1 (Local)
+* Skip this step if you only want the **output.csv** file mentioned in step 6, which is available as **final.csv** in the **Root**:\asr directory
 1. Navigate to **Root**:\asr
 2. Run the following command in the Terminal .
    ```shell
@@ -38,11 +39,16 @@ Prior to running this project on your local machine, please ensure that the foll
     docker run --name asr-service --rm -p 8001:8001 asr # start a docker container with the name asr-service using the asr image built earlier, expose port 8001, and auto clean the container once it has stopped
     ```
 3. Go to browser and open http://localhost:8001/ping, it should responde you with _"response": "pong"_ once the server is up and running
-4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle to **Root**:\asr (step 5 of Prerequisites)
-5. Run the following command in the Terminal or python virtual environment.
+4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle to **Root**:\asr (step 5 of Prerequisites). _**The original mp3 files and the csv file will be automatically deleted after program execution**_
+5. 
+6. Run the following command in the Terminal or python virtual environment.
     ```shell
     python cv-decode.py
     ```
-6. After completion you will see a newly generated **output.csv** file
-7. Clean Up the copied cv-valid-dev directory and cv-valid-dev.csv, to prevent future docker build to include these files
+7. After completion you will see a newly generated **output.csv** file
+8. Clean Up the copied cv-valid-dev directory and cv-valid-dev.csv, to prevent future docker build to include these files
+9. Stop the running asr-service from step 2 using the following command
+   ```shell
+   docker stop asr-service
+   ```
 
