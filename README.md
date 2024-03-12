@@ -68,9 +68,20 @@ docker-compose up
    
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
 ### Part 3 Loading data to local Elasticsearch node
-7. 
-
-8. 
+6.  Navigate to **Root**:\elastic-backend and ensure the host is set to http://localhost:9200 on line 9
+```shell
+Line 9 host="http://localhost:9200"
+```
+7. Run the following command in the Terminal
+```shell
+python cv-index.py
+```
+8. You will see the following lines once it is completed
+```shell
+____________
+completed
+```
+9. Now you may go to http://localhost:3000/ in a browser and the application will be working fine.
 
 
 
