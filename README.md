@@ -162,7 +162,7 @@ cd  Automatic_Speech_Recognition
 ```shell
 docker-compose up
 ```
-12. If go to http://<your instance address>:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet. Or your EC2 security rule is not set up properly, refer to Appendix for EC2 security rule set up
+12. If go to http://\<your instance address>:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet. Or your EC2 security rule is not set up properly, refer to Appendix for EC2 security rule set up
     ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
 
 ### Part 3 Loading data to local Elasticsearch node (you should  execute this step locally)
