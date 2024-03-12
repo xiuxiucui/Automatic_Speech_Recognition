@@ -58,7 +58,7 @@ Prior to running this project on your local machine, please ensure that the foll
 8. After completion you will see a newly generated **output.csv** file
 9. Stop the running asr-service from step 2 using the following command
    ```shell
-   docker stop asr-service
+   docker stop asr-api
    ```
 ## Part 2 and Part 3(Local)
 ### Part 2 local deployment of services
