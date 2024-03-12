@@ -50,8 +50,8 @@ services:
     ports:
       - '3000:3000'
 
-# volumes:
-#   esdata01:
-#     driver: local
-#   esdata02:
-#     driver: local
+volumes:
+  esdata01:
+    driver: local
+  esdata02:
+    driver: local
