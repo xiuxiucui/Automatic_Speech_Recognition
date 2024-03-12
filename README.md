@@ -8,7 +8,8 @@ This repository containes the source code for Automatic_Speech_Recognition, Elas
  * http://ec2-3-27-34-117.ap-southeast-2.compute.amazonaws.com:3000/
 
 ![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/7b0977eb-ef08-444a-9a77-d3633f8ad20f)
-This project consist of 3 parts
+
+### This project consist of 3 parts
 1. Local generation of text from audio file using hugging face facebook/wav2vec2-large-960h model
 2. Deployment of Elasticsearch and Frontend UI Locallly or on  Amazon EC2 Instance 
 3. Uploading of csv file generated from step 1 to elastric search
