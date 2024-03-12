@@ -48,7 +48,7 @@ Prior to running this project on your local machine, please ensure that the foll
 5. Navigate to **Root**:\asr
 6. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs
    ```shell
-   CONNECTION_SEMAPHORE = asyncio.Semaphore(15) # currently set at 15 concurrent jobs
+   Line 25 CONNECTION_SEMAPHORE = asyncio.Semaphore(15) # currently set at 15 concurrent jobs
    ```
    
 7. Run the following command in the Terminal or python virtual environment. 
