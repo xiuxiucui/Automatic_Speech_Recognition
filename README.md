@@ -44,7 +44,7 @@ Prior to running this project on your local machine, please ensure that the foll
    docker run --name  asr-api --rm -p 8001:8001 asr # start a docker container with the name  asr-api using the asr image built earlier, expose port 8001, and auto clean the container once it has stopped
     ```
 3. Go to browser and open http://localhost:8001/ping, it should responde you with _"response": "pong"_ once the server is up and running
-4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle into **Root**:\asr (step 5 of Prerequisites). _**The original cv-valid-dev directory and the cv-valid-dev.csv file will be automatically deleted after program execution**_
+4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle into **Root**:\asr (step 5 of Prerequisites). _**The original cv-valid-dev directory and all the mp3 files within it will be automatically deleted after program execution**_
 5. Navigate to **Root**:\asr
 6. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs
    ```shell
