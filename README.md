@@ -94,7 +94,8 @@ completed
 ## Part 2 and Part 3(Amazon EC2 Deployment)
 ### Part 2 Deployment of services on Amazon EC2
 #### Deployment plan
-![current drawio (1)](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/12fa4e28-0da0-426a-a3c0-6846734c1e8e)
+![Uploading flow_chart.drawio (2).png…]()
+
 
 
 The following deployment plan works on Amazon Linux 2 Kernel 5.10 t2.micro as of 03/Dec/2024, you may need to change some of the configuration in future
