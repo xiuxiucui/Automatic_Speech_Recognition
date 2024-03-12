@@ -3,11 +3,10 @@
 </div>
 
 # About The Project
-This project consist of 4 parts
+This project consist of 3 parts
 1. Local generation of text from audio file using hugging face facebook/wav2vec2-large-960h model
-2. Deployment of Elasticsearch in Amazon EC2 Instance
-3. Uploading of text file generated from step 1
-4. Deployment of Frontend UI
+2. Deployment of Elasticsearch and Frontend UI in Amazon EC2 Instance or Local
+3. Uploading of csv file generated from step 1 to elastric search
 
 ## Installation
 Prior to running this project on your local machine, please ensure that the following prerequisites are met:
@@ -33,22 +32,26 @@ Prior to running this project on your local machine, please ensure that the foll
 ## Part 1 (Local)
 * Skip this step if you only want the **output.csv** file mentioned in step 6, which is available as **final.csv** in the **Root**:\asr directory
 1. Navigate to **Root**:\asr
-2. Run the following command in the Terminal .
+2. Run the following command in the Terminal 
    ```shell
     docker build .t asr . # build a docker image and tag it as asr
     docker run --name asr-service --rm -p 8001:8001 asr # start a docker container with the name asr-service using the asr image built earlier, expose port 8001, and auto clean the container once it has stopped
     ```
 3. Go to browser and open http://localhost:8001/ping, it should responde you with _"response": "pong"_ once the server is up and running
-4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle to **Root**:\asr (step 5 of Prerequisites). _**The original mp3 files and the csv file will be automatically deleted after program execution**_
-5. 
-6. Run the following command in the Terminal or python virtual environment.
+4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle to **Root**:\asr (step 5 of Prerequisites). _**The original cv-valid-dev directory and the cv-valid-dev.csv file will be automatically deleted after program execution**_
+5. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs
+   ```shell
+   CONNECTION_SEMAPHORE = asyncio.Semaphore(15) # currently set at 15 concurrent jobs
+   ```
+   
+7. Run the following command in the Terminal or python virtual environment. 
     ```shell
     python cv-decode.py
     ```
-7. After completion you will see a newly generated **output.csv** file
-8. Clean Up the copied cv-valid-dev directory and cv-valid-dev.csv, to prevent future docker build to include these files
+8. After completion you will see a newly generated **output.csv** file
 9. Stop the running asr-service from step 2 using the following command
    ```shell
    docker stop asr-service
    ```
+## Part 2 (Local)
 
