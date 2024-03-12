@@ -53,5 +53,23 @@ Prior to running this project on your local machine, please ensure that the foll
    ```shell
    docker stop asr-service
    ```
-## Part 2 (Local)
+## Part 2 and Part 3(Local)
+1. Navigate to **Root**:\search-ui and change line 9 to
+ ```shell
+ENV REACT_APP_DATABASE_API=localhost
+```
+3. Navigate to **Root**
+4. Run the following command in the Terminal and wait for the 3 containers to start up
+```shell
+docker-compose up
+```
+5. If go to http://localhost:3000/ and you will see the following error, which is perfectly normally, becasue we have not loaded the correct data yet
+![image](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/b4c8a5de-821d-4e2b-b6bf-c4af5382295e)
+
+7. asd
+
+8. 
+
+
+
 
