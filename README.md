@@ -29,7 +29,7 @@ Prior to running this project on your local machine, please ensure that the foll
 1. Start Docker desktop
 2. Fork this repository
 3. Clone the repository.
-4. Using your Terminal, navigate into **Automatic_Speech_Recognition** directory, where docker-compose.yaml file is located. This will be the the **Root** directory for this project
+4. Using your Terminal, navigate into **Automatic_Speech_Recognition** directory, where docker-compose.yml file is located. This will be the the **Root** directory for this project
 5. You may wish to create a python virtual environment here
 6. Run the following command in the Terminal or python virtual environment.
     ```shell
@@ -47,7 +47,7 @@ Prior to running this project on your local machine, please ensure that the foll
 3. Go to browser and open http://localhost:8001/ping, it should responde you with _"response": "pong"_ once the server is up and running
 4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle into **Root**:\asr (step 5 of Prerequisites). _**The original cv-valid-dev directory and all the mp3 files within it will be automatically deleted after program execution**_
 5. Navigate to **Root**:\asr
-6. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs
+6. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs based on your docker capacity
    ```shell
    Line 25 CONNECTION_SEMAPHORE = asyncio.Semaphore(15) # currently set at 15 concurrent jobs
    ```
@@ -56,7 +56,7 @@ Prior to running this project on your local machine, please ensure that the foll
     ```shell
     python cv-decode.py
     ```
-8. After completion you will see a newly generated **cv-valid-dev.csv** file
+8. After completion you will see a newly generated **cv-valid-dev.csv** file and **completed** will be printed on the terminal
 9. Stop the running asr-service from step 2 using the following command
    ```shell
    docker stop asr-api
@@ -101,7 +101,7 @@ The following deployment plan works on Amazon Linux 2 Kernel 5.10 t2.micro as of
 
 
 1. Connect to your EC2 instance using SSH
-2. Install Docker, Docker Compose and git using the following command
+2. Install Docker, Docker Compose and git using the following command. Once completed, generate a SSH key and connect it to your github. Referer to Appendix for tutorial on SSH key generation in linux
 ```shell
 # install Docker
 sudo yum update -y
@@ -116,6 +116,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 # install git
 sudo yum install git -y
 
+# generate SSH
+ssh-keygen    #Following the set up guide step by step and open the key file to copy the key
 ```
 3. Disconnect the SSH session and reconnect it back again, This step allow us to run docker command without sudo
 4. Run following command to set up swap file
@@ -189,6 +191,7 @@ completed
 ![current drawio (2)](https://github.com/xiuxiucui/Automatic_Speech_Recognition/assets/41736859/3b0b0493-beec-4ae0-a869-60bfa6d04cc4)
 
 ## Appendix
+[YouTube Video on how to generate ssh key in linux](https://www.youtube.com/watch?v=eUwOlc9HfZs)
 [YouTube Video on how to configure EC2 outbound and inbound network traffic](https://www.youtube.com/watch?v=kxuUMZE9dxU)
 
 ## Contact
