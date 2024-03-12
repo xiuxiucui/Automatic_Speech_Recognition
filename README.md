@@ -27,10 +27,11 @@ Prior to running this project on your local machine, please ensure that the foll
 
 ### Starting up (Only required in Local)
 1. Start Docker desktop
-2. Clone the repository.
-3. Using your Terminal, navigate into **Automatic_Speech_Recognition** directory, where docker-compose.yaml file is located. This will be the the **Root** directory for this project
-4. You may wish to create a python virtual environment here
-5. Run the following command in the Terminal or python virtual environment.
+2. Fork this repository
+3. Clone the repository.
+4. Using your Terminal, navigate into **Automatic_Speech_Recognition** directory, where docker-compose.yaml file is located. This will be the the **Root** directory for this project
+5. You may wish to create a python virtual environment here
+6. Run the following command in the Terminal or python virtual environment.
     ```shell
     pip install -r requirements.txt
     ```
