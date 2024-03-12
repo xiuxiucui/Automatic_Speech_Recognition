@@ -5,7 +5,7 @@
 # About The Project
 This project consist of 3 parts
 1. Local generation of text from audio file using hugging face facebook/wav2vec2-large-960h model
-2. Deployment of Elasticsearch and Frontend UI Local or on  Amazon EC2 Instance 
+2. Deployment of Elasticsearch and Frontend UI Locallly or on  Amazon EC2 Instance 
 3. Uploading of csv file generated from step 1 to elastric search
 
 ## Installation
