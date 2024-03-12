@@ -45,7 +45,8 @@ Prior to running this project on your local machine, please ensure that the foll
     ```
 3. Go to browser and open http://localhost:8001/ping, it should responde you with _"response": "pong"_ once the server is up and running
 4. Copy the cv-valid-dev directory and cv-valid-dev.csv  you have downloaded from Kaggle into **Root**:\asr (step 5 of Prerequisites). _**The original cv-valid-dev directory and the cv-valid-dev.csv file will be automatically deleted after program execution**_
-5. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs
+5. Navigate to **Root**:\asr
+6. **Optional** you may edit the following line within cv-decode.py to adjust the number of concurrent jobs
    ```shell
    CONNECTION_SEMAPHORE = asyncio.Semaphore(15) # currently set at 15 concurrent jobs
    ```
