@@ -5,28 +5,20 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.1
     volumes:
       - esdata01:/usr/share/elasticsearch/data
-    #port 9200 for API access
-    #port 9300 for inter-node communication
     ports:
       - '9200:9200'
       - '9300:9300'
 
     environment:
-        # enviromental variable to establish node name, clustername, make them aware of each other
       - node.name=es01
       - cluster.name=docker-cluster
       - cluster.initial_master_nodes=es01,es02
       - discovery.seed_hosts=es02
-        # cors enabled to allow the browser to send traffic to the backend server to retrieve databse data
-        # Enabled accordign to the Search UI Tutorial
       - http.cors.enabled=true
       - http.cors.allow-origin=*
       - http.cors.allow-methods=OPTIONS, HEAD, GET, POST, PUT, DELETE
       - http.cors.allow-headers=X-Requested-With, X-Auth-Token, Content-Type, Content-Length, Authorization, Access-Control-Allow-Headers, Accept, x-elastic-client-meta
       - http.cors.allow-credentials=true
-    # mem_limit limits amount of memery available per container, due to the limitation of t2.micro deployment instance
-    # memswap is necessary becasue we need to utilize disk dpsces to make sure the Elastic search is able to run,
-    # as recommended by docker official website, each node required 2GB of RAM
     mem_limit: 1g
     memswap_limit: 2g
 
@@ -38,21 +30,15 @@ services:
     volumes:
       - esdata02:/usr/share/elasticsearch/data
     environment:
-     # enviromental variable to establish node name, clustername, make them aware of each other
       - node.name=es02
       - cluster.name=docker-cluster
       - cluster.initial_master_nodes=es01,es02
       - discovery.seed_hosts=es01
-        # cors enabled to allow the browser to send traffic to the backend server to retrieve databse data
-        # Enabled accordign to the Search UI Tutorial
       - http.cors.enabled=true
       - http.cors.allow-origin=*
       - http.cors.allow-methods=OPTIONS, HEAD, GET, POST, PUT, DELETE
       - http.cors.allow-headers=X-Requested-With, X-Auth-Token, Content-Type, Content-Length, Authorization, Access-Control-Allow-Headers, Accept, x-elastic-client-meta
       - http.cors.allow-credentials=true
-    # mem_limit limits amount of memery available per container, due to the limitation of t2.micro deployment instance
-    # memswap is necessary becasue we need to utilize disk dpsces to make sure the Elastic search is able to run,
-    # as recommended by docker official website, each node required 2GB of RAM
     mem_limit: 1g
     memswap_limit: 2g
 
