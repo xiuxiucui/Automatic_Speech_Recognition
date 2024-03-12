@@ -36,7 +36,7 @@ Prior to running this project on your local machine, please ensure that the foll
     ```
 
 ## Part 1 (Only required in Local)
-* Skip this step if you only want the **output.csv** file mentioned in step 6, which is available as **final.csv** in the **Root**:\asr directory
+* Skip this step if you only want the **cv-valid-dev** file mentioned in step 8, which is available as **cv-valid-dev** in the **Root**:\asr directory
 1. Navigate to **Root**:\asr
 2. Run the following command in the Terminal 
    ```shell
@@ -55,7 +55,7 @@ Prior to running this project on your local machine, please ensure that the foll
     ```shell
     python cv-decode.py
     ```
-8. After completion you will see a newly generated **output.csv** file
+8. After completion you will see a newly generated **cv-valid-dev.csv** file
 9. Stop the running asr-service from step 2 using the following command
    ```shell
    docker stop asr-api
